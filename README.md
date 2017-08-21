@@ -34,27 +34,32 @@ func main() {
 	//
 	// First instantiate form
 	//
-	var color Collor
-	color.Cor = "purple"
-	color.Cprintln("Purple")
+	var C Color
+	C.Cor = "purple"
+	C.Cprintln("Purple")
 
 	//
 	// Second way to instantiate
 	//
-	c := new(Collor)
+	c := new(Color)
 	c.Cor = "green"
-	c.Cprintln("Start port")
+	c.Cprintln("Color Green")
 
 	//
 	// Third way to instantiate
 	//
-	red := Collor{"red"}
-	red.Cprintln("Start port red")
+	red := Color{"red"}
+	red.Cprintln("Color red")
 
 	//
 	// Fourth way to instantiate
 	//
-	Red.Cprintln("Collor red2")
+	Red.Cprintln("Red color instance otherwise")
+
+	//
+	// Yellow
+	//
+	Yellow.Cprintln("Yellow color!!")
 
 }
 

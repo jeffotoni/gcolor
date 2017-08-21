@@ -101,7 +101,8 @@ func (c CorGeneric) Cprintln(text string) {
 }
 
 //
-//
+// Instances of objects,
+// instances of their colors
 //
 var Yellow CorGeneric = CorGeneric{"yellow"}
 var Black CorGeneric = CorGeneric{"black"}

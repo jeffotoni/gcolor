@@ -50,4 +50,9 @@ func main() {
 	//
 	Red.Cprintln("Red color instance otherwise")
 
+	//
+	// Yellow
+	//
+	Yellow.Cprintln("Yellow color!!")
+
 }
