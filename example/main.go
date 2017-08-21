@@ -1,24 +1,3 @@
-# gocolor
-
-A simple lib to help you color when developing some bash application using ANSI-COLORS.
-
-The goal is to make the lib leaner and leaner.
-
-The gcolor was made only with this intúito of leaving its characters in the colored bash.
-
-
-## Install
-
-```go
-
-go get github.com/jeffotoni/gcolor
-
-```
-
-## Use gcolor
-
-```go
-
 package main
 
 import (
@@ -57,5 +36,3 @@ func main() {
 	Red.Cprintln("Collor red2")
 
 }
-
-```

@@ -1,5 +1,5 @@
 /*
-* Ukkbox Go Library (C) 2017 Inc.
+* Go Library (C) 2017 Inc.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -9,11 +9,11 @@
 * @project     Ukkbox
 * @package     main
 * @author      @jeffotoni
-* @size        01/06/2017
+* @size        21/08/2017
 *
  */
 
-package gocollor
+package gcolor
 
 import (
 	"fmt"
