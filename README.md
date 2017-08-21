@@ -1,10 +1,12 @@
 # gocolor
 
-A simple lib to help you color when developing some bash application using ANSI-COLORS.
+A simple lib to help you color when developing some bash applications using ANSI-COLORS.
 
 The goal is to make the lib leaner and leaner.
 
-The gcolor was made only with this intúito of leaving its characters in the colored bash.
+The gcolor was made just with this intuition to leave the texts in the colored bash.
+
+You can collaborate by giving a "Fork" and sending us a "pull request", lib gcolor was just an academic play with only didactic input, which we use in our projects, something fun to do and learn.
 
 
 ## Install

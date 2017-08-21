@@ -59,7 +59,7 @@ func MapCollor() map[string]string {
 }
 
 //
-//
+// Method that builds Map color
 //
 func (c Color) MapColor() string {
 
@@ -69,7 +69,7 @@ func (c Color) MapColor() string {
 }
 
 //
-//
+// Method that builds Map Color
 //
 func (c CorGeneric) MapColor() string {
 
@@ -90,7 +90,7 @@ func (c Color) Cprintln(text string) {
 }
 
 //
-//
+// Implementing the color Cprintln to Cor Generic
 //
 func (c CorGeneric) Cprintln(text string) {
 
