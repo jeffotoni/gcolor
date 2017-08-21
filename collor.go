@@ -58,6 +58,9 @@ func MapCollor() map[string]string {
 	return MapCor
 }
 
+//
+//
+//
 func (c Color) MapColor() string {
 
 	MapCor := MapCollor()
@@ -65,6 +68,19 @@ func (c Color) MapColor() string {
 	return MapCor[c.Cor]
 }
 
+//
+//
+//
+func (c CorGeneric) MapColor() string {
+
+	MapCor := MapCollor()
+
+	return MapCor[c.Cor]
+}
+
+//
+// Implementing the color Cprintln
+//
 func (c Color) Cprintln(text string) {
 
 	cornow := c.MapColor()
@@ -73,13 +89,9 @@ func (c Color) Cprintln(text string) {
 	fmt.Println(stringt)
 }
 
-func (c CorGeneric) MapColor() string {
-
-	MapCor := MapCollor()
-
-	return MapCor[c.Cor]
-}
-
+//
+//
+//
 func (c CorGeneric) Cprintln(text string) {
 
 	cornow := c.MapColor()
@@ -88,6 +100,9 @@ func (c CorGeneric) Cprintln(text string) {
 	fmt.Println(stringt)
 }
 
+//
+//
+//
 var Yellow CorGeneric = CorGeneric{"yellow"}
 var Black CorGeneric = CorGeneric{"black"}
 var Green CorGeneric = CorGeneric{"green"}
