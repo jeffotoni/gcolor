@@ -64,4 +64,15 @@ func main() {
 	// Cyan Color
 	//
 	println(CyanCor("Testing cyan color"))
+
+	//
+	//
+	//
+	Texts := []string{"mytest 1", "mytest 2", "mytest 3"}
+
+	//
+	//
+	//
+	Printer.Print(RED_FG, "test string %s", Texts)
+
 }

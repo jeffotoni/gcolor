@@ -25,6 +25,10 @@ import (
 //
 var MapCor map[string]string
 
+const (
+	RED_FG = "red"
+)
+
 //
 // Color Struct
 //
@@ -38,6 +42,56 @@ type Color struct {
 type CorGeneric struct {
 	Cor string
 }
+
+//
+//
+//
+type ColoredPrinter interface {
+	Print(Color, string, ...interface{})
+}
+
+//
+//
+//
+func (c Color) Print(Color, text string, vals interface{}) {
+
+	//
+	//
+	//
+	var sconcat string
+
+	//
+	//
+	//
+	cgen := CorGeneric{Color}
+	cornow := cgen.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	//
+	//
+	//
+	switch v := vals.(type) {
+
+	case []string:
+
+		for _, val := range v {
+
+			fmt.Println("val1: ", val, "cor: ", c.Cor)
+			sconcat = sconcat + val + " "
+		}
+	}
+
+	//
+	//
+	//
+	fmt.Println(fmt.Sprintf(stringt, sconcat))
+}
+
+//
+//
+//
+var Printer Color = Color{}
 
 //
 // Implementing the color map
