@@ -63,6 +63,15 @@ func main() {
 	//
 	Yellow.Cprintln("Yellow color!!")
 
+	//
+	// Black Color
+	//
+	println(BlackCor("Testing black color"))
+
+	//
+	// Cyan Color
+	//
+	println(CyanCor("Testing cyan color"))
 }
 
 ```
