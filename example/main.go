@@ -28,21 +28,21 @@ func main() {
 	//
 	// First instantiate form
 	//
-	var color Collor
+	var color Color
 	color.Cor = "purple"
 	color.Cprintln("Purple")
 
 	//
 	// Second way to instantiate
 	//
-	c := new(Collor)
+	c := new(Color)
 	c.Cor = "green"
 	c.Cprintln("Color Green")
 
 	//
 	// Third way to instantiate
 	//
-	red := Collor{"red"}
+	red := Color{"red"}
 	red.Cprintln("Color red")
 
 	//

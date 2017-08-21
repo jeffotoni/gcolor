@@ -28,7 +28,7 @@ var MapCor map[string]string
 //
 // Color Struct
 //
-type Collor struct {
+type Color struct {
 	Cor string
 }
 
@@ -58,14 +58,14 @@ func MapCollor() map[string]string {
 	return MapCor
 }
 
-func (c Collor) MapColor() string {
+func (c Color) MapColor() string {
 
 	MapCor := MapCollor()
 
 	return MapCor[c.Cor]
 }
 
-func (c Collor) Cprintln(text string) {
+func (c Color) Cprintln(text string) {
 
 	cornow := c.MapColor()
 	corSplit := strings.Split(cornow, "#")
