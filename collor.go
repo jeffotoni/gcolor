@@ -101,6 +101,110 @@ func (c CorGeneric) Cprintln(text string) {
 }
 
 //
+// Method red, returns only string with color does not println
+//
+func RedCor(text string) string {
+
+	cgen := CorGeneric{"red"}
+	cornow := cgen.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	return stringt
+}
+
+//
+// Method Green, returns only string with color does not println
+//
+func GreenCor(text string) string {
+
+	cgen := CorGeneric{"green"}
+	cornow := cgen.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	return stringt
+}
+
+//
+// Method Blue, returns only string with color does not println
+//
+func BlueCor(text string) string {
+
+	cgen := CorGeneric{"blue"}
+	cornow := cgen.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	return stringt
+}
+
+//
+// Method Yellow, returns only string with color does not println
+//
+func YellowCor(text string) string {
+
+	cgen := CorGeneric{"yellow"}
+	cornow := cgen.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	return stringt
+}
+
+//
+// Method Purple, returns only string with color does not println
+//
+func PurpleCor(text string) string {
+
+	cgen := CorGeneric{"purple"}
+	cornow := cgen.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	return stringt
+}
+
+//
+// Method Cyan, returns only string with color does not println
+//
+func CyanCor(text string) string {
+
+	cgen := CorGeneric{"cyan"}
+	cornow := cgen.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	return stringt
+}
+
+//
+// Method White, returns only string with color does not println
+//
+func WhiteCor(text string) string {
+
+	cgen := CorGeneric{"white"}
+	cornow := cgen.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	return stringt
+}
+
+//
+// Method black, returns only string with color does not println
+//
+func BlackCor(text string) string {
+
+	cblack := CorGeneric{"black"}
+	cornow := cblack.MapColor()
+	corSplit := strings.Split(cornow, "#")
+	stringt := corSplit[0] + text + corSplit[1]
+
+	return stringt
+}
+
+//
 // Instances of objects,
 // instances of their colors
 //
