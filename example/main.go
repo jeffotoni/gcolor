@@ -28,9 +28,9 @@ func main() {
 	//
 	// First instantiate form
 	//
-	var color Color
-	color.Cor = "purple"
-	color.Cprintln("Purple")
+	var C Color
+	C.Cor = "purple"
+	C.Cprintln("Purple")
 
 	//
 	// Second way to instantiate
