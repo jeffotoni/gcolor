@@ -25,13 +25,23 @@ package main
 
 import (
 	// "fmt"
-	. "github.com/jeffotoni/gcolor"
+	"github.com/jeffotoni/gcolor"
 )
 
-//
-// start
-//
+// How to get a color
+package main
+
+import (
+	"fmt"
+
+	"github.com/jeffotoni/gcolor"
+)
+
 func main() {
+	
+  c := gcolor.Color{}
+
+	fmt.Println(c.Cyan("Hi!"))
 
 	//
 	// First instantiate form
@@ -83,6 +93,6 @@ func main() {
 	//
 	//
 	Printer.Print(RED_FG, "test string %s", Texts)
-}
 
+}
 ```

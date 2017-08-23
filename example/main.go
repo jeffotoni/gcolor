@@ -16,49 +16,27 @@
 package main
 
 import (
-	// "fmt"
-	. "github.com/jeffotoni/gcolor"
+	"fmt"
+
+	"github.com/jeffotoni/gcolor"
 )
 
-//
-// start
-//
+type Jovem struct {
+	Nome string
+}
+
+func (j Jovem) Fala() string {
+	return fmt.Sprintf("Meu nome é : %s", j.Nome)
+}
+
 func main() {
+	j := Jovem{Nome: "Marcus Mann"}
 
-	//
-	// First instantiate form
-	//
-	var C Color
-	C.Cor = "purple"
-	C.Cprintln("Purple")
+	c := gcolor.Color{}
+	cyan := c.Red(j.Fala())
 
-	//
-	// Second way to instantiate
-	//
-	c := new(Color)
-	c.Cor = "green"
-	c.Cprintln("Color Green")
 
-	//
-	// Third way to instantiate
-	//
-	red := Color{"red"}
-	red.Cprintln("Color red")
-
-	//
-	// Fourth way to instantiate
-	//
-	Red.Cprintln("Red color instance otherwise")
-
-	//
-	// Yellow
-	//
-	Yellow.Cprintln("Yellow color!!")
-
-	//
-	// Black Color
-	//
-	println(BlackCor("Testing black color"))
+	fmt.Println(cyan)
 
 	//
 	// Cyan Color
@@ -76,3 +54,4 @@ func main() {
 	Printer.Print(RED_FG, "test string %s", Texts)
 
 }
+

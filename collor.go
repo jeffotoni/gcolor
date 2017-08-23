@@ -8,12 +8,11 @@
 * http://www.apache.org/licenses/LICENSE-2.0
 * @project     Ukkbox
 * @package     main
-* @author      @jeffotoni
+* @author      @jeffotoni, @MarcusMann
 * @size        21/08/2017
 *
  */
 
-package gcolor
 
 import (
 	"fmt"
@@ -224,48 +223,30 @@ func PurpleCor(text string) string {
 //
 func CyanCor(text string) string {
 
-	cgen := CorGeneric{"cyan"}
-	cornow := cgen.MapColor()
-	corSplit := strings.Split(cornow, "#")
-	stringt := corSplit[0] + text + corSplit[1]
 
-	return stringt
-}
+// Sufix - Is added to the end of each color
+const Sufix = "\033[0m"
 
-//
-// Method White, returns only string with color does not println
-//
-func WhiteCor(text string) string {
+// Color structure
+type Color struct{}
 
-	cgen := CorGeneric{"white"}
-	cornow := cgen.MapColor()
-	corSplit := strings.Split(cornow, "#")
-	stringt := corSplit[0] + text + corSplit[1]
+// Black - Return text with black color
+func (c Color) Black(msg string) string { return fmt.Sprintf("\033[0;30m%s%s", msg, Sufix) }
 
-	return stringt
-}
+// Red - Return text with Red color
+func (c Color) Red(msg string) string { return fmt.Sprintf("\033[0;31m%s%s", msg, Sufix) }
 
-//
-// Method black, returns only string with color does not println
-//
-func BlackCor(text string) string {
+// Green - Return text with black color
+func (c Color) Green(msg string) string { return fmt.Sprintf("\033[0;32m%s%s", msg, Sufix) }
 
-	cblack := CorGeneric{"black"}
-	cornow := cblack.MapColor()
-	corSplit := strings.Split(cornow, "#")
-	stringt := corSplit[0] + text + corSplit[1]
+// Yellow - Return text with Yellow color
+func (c Color) Yellow(msg string) string { return fmt.Sprintf("\033[0;33m%s%s", msg, Sufix) }
 
-	return stringt
-}
+// Blue - Return text with Blue color
+func (c Color) Blue(msg string) string { return fmt.Sprintf("\033[0;34m%s%s", msg, Sufix) }
 
-//
-// Instances of objects,
-// instances of their colors
-//
-var Yellow CorGeneric = CorGeneric{"yellow"}
-var Black CorGeneric = CorGeneric{"black"}
-var Green CorGeneric = CorGeneric{"green"}
-var Blue CorGeneric = CorGeneric{"blue"}
-var Purple CorGeneric = CorGeneric{"purple"}
-var Cyan CorGeneric = CorGeneric{"cyan"}
-var Red CorGeneric = CorGeneric{"red"}
+// Purple - Return text with Purple color
+func (c Color) Purple(msg string) string { return fmt.Sprintf("\033[0;35m%s%s", msg, Sufix) }
+
+// Cyan - Return text with Cyan color
+func (c Color) Cyan(msg string) string { return fmt.Sprintf("\033[0;36m%s%s", msg, Sufix) }
