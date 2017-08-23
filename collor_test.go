@@ -1,3 +1,18 @@
+/*
+* Go Library (C) 2017 Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+* @project     Collor
+* @package     main
+* @author      @marcus
+* @size        23/08/2017
+*
+ */
+
 package gcolor
 
 import (
@@ -5,6 +20,7 @@ import (
 )
 
 func TestColor_Cyan(t *testing.T) {
+
 	type args struct {
 		msg string
 	}
@@ -16,8 +32,11 @@ func TestColor_Cyan(t *testing.T) {
 	}{
 	// TODO: Add test cases.
 	}
+
 	for _, tt := range tests {
+
 		t.Run(tt.name, func(t *testing.T) {
+
 			c := Color{}
 			if got := c.Cyan(tt.args.msg); got != tt.want {
 				t.Errorf("Color.Cyan() = %v, want %v", got, tt.want)
@@ -27,6 +46,7 @@ func TestColor_Cyan(t *testing.T) {
 }
 
 func TestColor_Purple(t *testing.T) {
+
 	type args struct {
 		msg string
 	}
@@ -49,6 +69,7 @@ func TestColor_Purple(t *testing.T) {
 }
 
 func TestColor_Blue(t *testing.T) {
+
 	type args struct {
 		msg string
 	}
@@ -71,6 +92,7 @@ func TestColor_Blue(t *testing.T) {
 }
 
 func TestColor_Yellow(t *testing.T) {
+
 	type args struct {
 		msg string
 	}
@@ -93,6 +115,7 @@ func TestColor_Yellow(t *testing.T) {
 }
 
 func TestColor_Green(t *testing.T) {
+
 	type args struct {
 		msg string
 	}
@@ -115,6 +138,7 @@ func TestColor_Green(t *testing.T) {
 }
 
 func TestColor_Red(t *testing.T) {
+
 	type args struct {
 		msg string
 	}
@@ -137,6 +161,7 @@ func TestColor_Red(t *testing.T) {
 }
 
 func TestColor_Black(t *testing.T) {
+
 	type args struct {
 		msg string
 	}
