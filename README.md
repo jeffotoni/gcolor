@@ -25,53 +25,21 @@ package main
 
 import (
 	// "fmt"
-	. "github.com/jeffotoni/gcolor"
+	"github.com/jeffotoni/gcolor"
 )
 
-//
-// start
-//
+// How to get a color
+package main
+
+import (
+	"fmt"
+
+	"github.com/jeffotoni/gcolor"
+)
+
 func main() {
+	c := gcolor.Color{}
 
-	//
-	// First instantiate form
-	//
-	var C Color
-	C.Cor = "purple"
-	C.Cprintln("Purple")
-
-	//
-	// Second way to instantiate
-	//
-	c := new(Color)
-	c.Cor = "green"
-	c.Cprintln("Color Green")
-
-	//
-	// Third way to instantiate
-	//
-	red := Color{"red"}
-	red.Cprintln("Color red")
-
-	//
-	// Fourth way to instantiate
-	//
-	Red.Cprintln("Red color instance otherwise")
-
-	//
-	// Yellow
-	//
-	Yellow.Cprintln("Yellow color!!")
-
-	//
-	// Black Color
-	//
-	println(BlackCor("Testing black color"))
-
-	//
-	// Cyan Color
-	//
-	println(CyanCor("Testing cyan color"))
+	fmt.Println(c.Cyan("Hi!"))
 }
-
 ```
