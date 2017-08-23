@@ -38,61 +38,8 @@ import (
 )
 
 func main() {
-	
-  c := gcolor.Color{}
+	c := gcolor.Color{}
 
 	fmt.Println(c.Cyan("Hi!"))
-
-	//
-	// First instantiate form
-	//
-	var C Color
-	C.Cor = "purple"
-	C.Cprintln("Purple")
-
-	//
-	// Second way to instantiate
-	//
-	c := new(Color)
-	c.Cor = "green"
-	c.Cprintln("Color Green")
-
-	//
-	// Third way to instantiate
-	//
-	red := Color{"red"}
-	red.Cprintln("Color red")
-
-	//
-	// Fourth way to instantiate
-	//
-	Red.Cprintln("Red color instance otherwise")
-
-	//
-	// Yellow
-	//
-	Yellow.Cprintln("Yellow color!!")
-
-	//
-	// Black Color
-	//
-	println(BlackCor("Testing black color"))
-
-	//
-	// Cyan Color
-	//
-	println(CyanCor("Testing cyan color"))
-
-
-	//
-	//
-	//
-	Texts := []string{"mytest 1", "mytest 2", "mytest 3"}
-	
-	//
-	//
-	//
-	Printer.Print(RED_FG, "test string %s", Texts)
-
 }
 ```
