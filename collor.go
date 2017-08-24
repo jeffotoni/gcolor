@@ -25,8 +25,18 @@ import (
 //
 var MapCor map[string]string
 
+//
+// const color
+//
 const (
-	RED_FG = "red"
+	BLACK_FG  = "black"
+	RED_FG    = "red"
+	GREEN_FG  = "green"
+	YELLOW_FG = "yellow"
+	BLUE_FG   = "blue"
+	PURPLE_FG = "purple"
+	CYAN_FG   = "cyan"
+	WHITE_FG  = "white"
 )
 
 //
