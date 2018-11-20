@@ -25,9 +25,7 @@ import (
 //
 var MapCor map[string]string
 
-//
 // const color
-//
 const (
 	BLACK_FG  = "black"
 	RED_FG    = "red"
