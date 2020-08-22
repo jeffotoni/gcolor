@@ -17,6 +17,7 @@ package main
 
 import (
 	"fmt"
+
 	. "github.com/jeffotoni/gcolor"
 )
 

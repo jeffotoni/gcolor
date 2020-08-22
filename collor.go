@@ -18,6 +18,8 @@ package gcolor
 import (
 	"fmt"
 	"strings"
+
+	"github.com/jeffotonni/gconcat"
 )
 
 //
@@ -74,19 +76,19 @@ func (c Collor) Print(Collor, text string, vals interface{}) {
 	cgen := CorGeneric{Collor}
 	cornow := cgen.MapColor()
 	corSplit := strings.Split(cornow, "#")
-	stringt := corSplit[0] + text + corSplit[1]
+	if len(corSplit) < 1 {
+		return
+	}
+	stringt := gconcat.Build(corSplit[0], text, corSplit[1])
 
 	//
 	//
 	//
 	switch v := vals.(type) {
-
 	case []string:
-
 		for _, val := range v {
-
-			fmt.Println("val1: ", val, "cor: ", c.Cor)
-			sconcat = sconcat + val + " "
+			//fmt.Println("val1: ", val, "cor: ", c.Cor)
+			sconcat = gconcat.Build(sconcat, val, " ")
 		}
 	}
 
@@ -124,9 +126,7 @@ func MapCollor() map[string]string {
 // Method that builds Map color
 //
 func (c Collor) MapColor() string {
-
 	MapCor := MapCollor()
-
 	return MapCor[c.Cor]
 }
 
@@ -134,9 +134,7 @@ func (c Collor) MapColor() string {
 // Method that builds Map Collor
 //
 func (c CorGeneric) MapColor() string {
-
 	MapCor := MapCollor()
-
 	return MapCor[c.Cor]
 }
 
@@ -144,10 +142,12 @@ func (c CorGeneric) MapColor() string {
 // Implementing the color Cprintln
 //
 func (c Collor) Cprintln(text string) {
-
 	cornow := c.MapColor()
 	corSplit := strings.Split(cornow, "#")
-	stringt := corSplit[0] + text + corSplit[1]
+	if len(corSplit) < 1 {
+		return
+	}
+	stringt := gconcat.Build(corSplit[0], text, corSplit[1])
 	fmt.Println(stringt)
 }
 
@@ -155,10 +155,12 @@ func (c Collor) Cprintln(text string) {
 // Implementing the color Cprintln to Cor Generic
 //
 func (c CorGeneric) Cprintln(text string) {
-
 	cornow := c.MapColor()
 	corSplit := strings.Split(cornow, "#")
-	stringt := corSplit[0] + text + corSplit[1]
+	if len(corSplit) < 1 {
+		return
+	}
+	stringt := gconcat.Build(corSplit[0], text, corSplit[1])
 	fmt.Println(stringt)
 }
 
