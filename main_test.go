@@ -16,6 +16,9 @@
 package gcolor
 
 import (
+	"bytes"
+	"fmt"
+	"io"
 	"os"
 	"testing"
 )
@@ -179,7 +182,12 @@ func TestColor_Black(t *testing.T) {
 	Printer.Print(YELLOW_FG, "%s", Texts1)
 	Printer.Print(RED_FG, "%s", Texts2)
 	Printer.Print(GREEN_FG, "%s", Texts3)
-	// os_r.Close()
-	// out, _ := ioutil.ReadAll(os_r)
-	// fmt.Println(string(out))
+
+	os_w.Close()
+	buf := &bytes.Buffer{}
+	io.Copy(buf, os_r)
+	os_r.Close()
+	// Clean up.
+	os.Stdout = old
+	fmt.Println(buf.String())
 }
