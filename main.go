@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/jeffotonni/gconcat"
+	"github.com/jeffotoni/gconcat"
 )
 
 //
@@ -57,7 +57,7 @@ type CorGeneric struct {
 //
 //
 type ColloredPrinter interface {
-	Print(Collor, string, ...interface{})
+	Print(Collor, string, interface{})
 }
 
 //
@@ -79,18 +79,9 @@ func (c Collor) Print(Collor, text string, vals interface{}) {
 	if len(corSplit) < 1 {
 		return
 	}
-	stringt := gconcat.Build(corSplit[0], text, corSplit[1])
 
-	//
-	//
-	//
-	switch v := vals.(type) {
-	case []string:
-		for _, val := range v {
-			//fmt.Println("val1: ", val, "cor: ", c.Cor)
-			sconcat = gconcat.Build(sconcat, val, " ")
-		}
-	}
+	stringt := gconcat.Build(corSplit[0], text, corSplit[1])
+	sconcat = gconcat.Build(vals)
 
 	//
 	//

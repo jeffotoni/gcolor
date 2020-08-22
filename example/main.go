@@ -88,7 +88,7 @@ func main() {
 	//
 	//
 	//
-	Printer.Print(RED_FG, "test string %s", Texts)
+	Printer.Print(YELLOW_FG, "%s", Texts)
 
 	//
 	//
