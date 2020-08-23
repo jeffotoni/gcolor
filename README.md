@@ -24,7 +24,7 @@ go get github.com/jeffotoni/gcolor
 package main
 
 import (
-	// "fmt"
+	  "fmt"
 	. "github.com/jeffotoni/gcolor"
 )
 
@@ -96,7 +96,7 @@ func main() {
 	//
 	//
 	//
-	Printer.Print(RED_FG, "test string %s", Texts)
+	Printer.Print(YELLOW_FG, "%s", Texts)
 
 	//
 	//
