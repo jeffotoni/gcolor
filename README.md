@@ -17,7 +17,7 @@ go get github.com/jeffotoni/gcolor
 
 ```
 
-## Use gcolor
+## Use gcolor example
 
 ```go
 
