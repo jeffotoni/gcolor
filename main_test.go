@@ -35,6 +35,13 @@ func TestColor_Black(t *testing.T) {
 	// want2 := "1010022000"
 	// want3 := "jeffotoni 2021"
 
+	println(RedCor("Test Func com concat", " vamos ver red", Texts3, " ano: ", 2020))
+	Print.Read("print read", 2021, " vamos ter read new now.", 700)
+	Print.Yellow("print yellow", 2021, " gcolor new ", 10)
+	Print.Blue("print Blue", 2021, " gcolor new ", 10)
+	Print.Purple("print Purple", 2021, " gcolor new ", 10)
+	Print.Black("print Black", 2021, " gcolor new ", 10)
+
 	old = os.Stdout
 	os_r, os_w, _ = os.Pipe()
 	os.Stdout = os_w

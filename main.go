@@ -53,6 +53,40 @@ type ColloredPrinter interface {
 	Print(Collor, string, interface{})
 }
 
+// func print color
+type gprint struct{}
+
+func (p gprint) Black(msg ...interface{}) {
+	println(BlackCor(msg))
+}
+
+func (p gprint) Read(msg ...interface{}) {
+	println(RedCor(msg))
+}
+
+func (p gprint) Cyan(msg ...interface{}) {
+	println(CyanCor(msg))
+}
+
+func (p gprint) Green(msg ...interface{}) {
+	println(GreenCor(msg))
+}
+
+func (p gprint) Yellow(msg ...interface{}) {
+	println(YellowCor(msg))
+}
+
+func (p gprint) Blue(msg ...interface{}) {
+	println(BlueCor(msg))
+}
+
+func (p gprint) Purple(msg ...interface{}) {
+	println(PurpleCor(msg))
+}
+
+var Print gprint
+
+// print.Red()
 //
 //
 //
@@ -91,9 +125,7 @@ var Printer Collor = Collor{}
 // Implementing the color map
 //
 func MapCollor() map[string]string {
-
 	MapCor = make(map[string]string)
-
 	MapCor["black"] = "\033[0;30m#\033[0m"
 	MapCor["red"] = "\033[0;31m#\033[0m"
 	MapCor["green"] = "\033[0;32m#\033[0m"
@@ -102,7 +134,6 @@ func MapCollor() map[string]string {
 	MapCor["purple"] = "\033[0;35m#\033[0m"
 	MapCor["cyan"] = "\033[0;36m#\033[0m"
 	MapCor["white"] = "\033[37m#\033[0m"
-
 	return MapCor
 }
 
@@ -132,7 +163,7 @@ func (c Collor) Cprintln(text string) {
 		return
 	}
 	stringt := gconcat.Build(corSplit[0], text, corSplit[1])
-	fmt.Println(stringt)
+	println(stringt)
 }
 
 //
@@ -148,26 +179,71 @@ func (c CorGeneric) Cprintln(text string) {
 	fmt.Println(stringt)
 }
 
+// Sufix - Is added to the end of each color
+const Sufix = "\033[0m"
+
 // Black - Return text with black color
-func BlackCor(msg string) string { return fmt.Sprintf("\033[0;30m%s%s", msg, Sufix) }
+func BlackCor(msg ...interface{}) string {
+	var sb strings.Builder
+	for _, str := range msg {
+		sb.WriteString(gconcat.Build(str))
+	}
+	return gconcat.Build("\033[0;30m", sb.String(), Sufix)
+}
 
 // Red - Return text with Red color
-func RedCor(msg string) string { return fmt.Sprintf("\033[0;31m%s%s", msg, Sufix) }
+func RedCor(msg ...interface{}) string {
+	var sb strings.Builder
+	for _, str := range msg {
+		sb.WriteString(gconcat.Build(str))
+	}
+	return gconcat.Build("\033[0;31m", sb.String(), Sufix)
+}
 
 // Green - Return text with black color
-func GreenCor(msg string) string { return fmt.Sprintf("\033[0;32m%s%s", msg, Sufix) }
+func GreenCor(msg ...interface{}) string {
+	var sb strings.Builder
+	for _, str := range msg {
+		sb.WriteString(gconcat.Build(str))
+	}
+	return gconcat.Build("\033[0;32m", sb.String(), Sufix)
+}
 
 // Yellow - Return text with Yellow color
-func YellowCor(msg string) string { return fmt.Sprintf("\033[0;33m%s%s", msg, Sufix) }
+func YellowCor(msg ...interface{}) string {
+	var sb strings.Builder
+	for _, str := range msg {
+		sb.WriteString(gconcat.Build(str))
+	}
+	return gconcat.Build("\033[0;33m", sb.String(), Sufix)
+}
 
 // Blue - Return text with Blue color
-func BlueCor(msg string) string { return fmt.Sprintf("\033[0;34m%s%s", msg, Sufix) }
+func BlueCor(msg ...interface{}) string {
+	var sb strings.Builder
+	for _, str := range msg {
+		sb.WriteString(gconcat.Build(str))
+	}
+	return gconcat.Build("\033[0;34m", sb.String(), Sufix)
+}
 
 // Purple - Return text with Purple color
-func PurpleCor(msg string) string { return fmt.Sprintf("\033[0;35m%s%s", msg, Sufix) }
+func PurpleCor(msg ...interface{}) string {
+	var sb strings.Builder
+	for _, str := range msg {
+		sb.WriteString(gconcat.Build(str))
+	}
+	return gconcat.Build("\033[0;35m", sb.String(), Sufix)
+}
 
 // Cyan - Return text with Cyan color
-func CyanCor(msg string) string { return fmt.Sprintf("\033[0;36m%s%s", msg, Sufix) }
+func CyanCor(msg ...interface{}) string {
+	var sb strings.Builder
+	for _, str := range msg {
+		sb.WriteString(gconcat.Build(str))
+	}
+	return gconcat.Build("\033[0;36m", sb.String(), Sufix)
+}
 
 /*
 *
@@ -176,9 +252,6 @@ func CyanCor(msg string) string { return fmt.Sprintf("\033[0;36m%s%s", msg, Sufi
 * @description Contribution made by Marcus
 *
  */
-
-// Sufix - Is added to the end of each color
-const Sufix = "\033[0m"
 
 // Color structure
 type Color struct{}
