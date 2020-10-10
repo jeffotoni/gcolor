@@ -54,37 +54,34 @@ type ColloredPrinter interface {
 }
 
 // func print color
-type gprint struct{}
 
-func (p gprint) Black(msg ...interface{}) {
+func PrintBlack(msg ...interface{}) {
 	println(BlackCor(msg))
 }
 
-func (p gprint) Read(msg ...interface{}) {
+func PrintRead(msg ...interface{}) {
 	println(RedCor(msg))
 }
 
-func (p gprint) Cyan(msg ...interface{}) {
+func PrintCyan(msg ...interface{}) {
 	println(CyanCor(msg))
 }
 
-func (p gprint) Green(msg ...interface{}) {
+func PrintGreen(msg ...interface{}) {
 	println(GreenCor(msg))
 }
 
-func (p gprint) Yellow(msg ...interface{}) {
+func PrintYellow(msg ...interface{}) {
 	println(YellowCor(msg))
 }
 
-func (p gprint) Blue(msg ...interface{}) {
+func PrintBlue(msg ...interface{}) {
 	println(BlueCor(msg))
 }
 
-func (p gprint) Purple(msg ...interface{}) {
+func PrintPurple(msg ...interface{}) {
 	println(PurpleCor(msg))
 }
-
-var Print gprint
 
 // print.Red()
 //
