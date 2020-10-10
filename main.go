@@ -59,7 +59,7 @@ func PrintBlack(msg ...interface{}) {
 	println(BlackCor(msg))
 }
 
-func PrintRead(msg ...interface{}) {
+func PrintRed(msg ...interface{}) {
 	println(RedCor(msg))
 }
 
