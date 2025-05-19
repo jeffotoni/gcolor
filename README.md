@@ -1,13 +1,33 @@
-# gocolor
+# gocolor 🎨
 
-A simple lib to help you color when developing some bash applications using ANSI-COLORS.
+A lightweight and didactic Go library for applying ANSI colors to your terminal output.
+Originally designed as an academic and fun experiment, gcolor makes it easy to print colored messages in CLI applications using simple and expressive functions.
 
-The goal is to make the lib leaner and leaner.
+Whether you’re building a shell tool, debugging with styled logs, or just learning how ANSI escape codes work in Go, this library helps you get colorful fast — no dependencies, no complexity.
 
-The gcolor was made just with this intuition to leave the texts in the colored bash.
+### ✨ Features
 
-You can collaborate by giving a "Fork" and sending us a "pull request", lib gcolor was just an academic play with only didactic input, which we use in our projects, something fun to do and learn.
+    • Minimal and easy-to-use API
+    • Supports standard ANSI foreground colors (red, green, blue, yellow, etc.)
+    • Built-in helpers like PrintRed("error"), CyanCor("info"), etc.
+    • Struct-based coloring for flexible output formats
+    • Safe and composable string building using gconcat
+    • Useful for scripting, logging, and educational purposes
 
+
+## 🧪 Simple Examples
+
+```go
+package main
+
+import . "github.com/jeffotoni/gcolor"
+
+func main() {
+    PrintRed("This is an error message")
+    PrintGreen("Operation successful!")
+    Yellow.Cprintln("Running task...")
+}
+```
 
 ## Install
 

@@ -16,45 +16,87 @@
 package gcolor
 
 import (
-	"bytes"
-	"fmt"
-	"io"
-	"os"
+	"strings"
 	"testing"
 )
 
-var old, os_r, os_w *os.File
+func TestCorFunctions(t *testing.T) {
+	tests := []struct {
+		name     string
+		function func(...interface{}) string
+		wantSub  string
+	}{
+		{"BlackCor", BlackCor, "\033[0;30m"},
+		{"RedCor", RedCor, "\033[0;31m"},
+		{"GreenCor", GreenCor, "\033[0;32m"},
+		{"YellowCor", YellowCor, "\033[0;33m"},
+		{"BlueCor", BlueCor, "\033[0;34m"},
+		{"PurpleCor", PurpleCor, "\033[0;35m"},
+		{"CyanCor", CyanCor, "\033[0;36m"},
+	}
 
-func TestColor_Black(t *testing.T) {
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := tt.function("teste")
+			if !strings.Contains(got, tt.wantSub) {
+				t.Errorf("expected color code %s in output, got: %s", tt.wantSub, got)
+			}
+		})
+	}
+}
 
-	Texts1 := []string{"jeffotoni 1", "golang 2", "lagn C 3"}
-	Texts2 := []int{10, 1002, 2000}
-	Texts3 := "jeffotoni 2021"
+func TestColorStructMethods(t *testing.T) {
+	c := Color{}
+	if !strings.Contains(c.Red("x"), "\033[0;31m") {
+		t.Error("Color.Red failed")
+	}
+	if !strings.Contains(c.Green("x"), "\033[0;32m") {
+		t.Error("Color.Green failed")
+	}
+	if !strings.Contains(c.Blue("x"), "\033[0;34m") {
+		t.Error("Color.Blue failed")
+	}
+	if !strings.Contains(c.Yellow("x"), "\033[0;33m") {
+		t.Error("Color.Yellow failed")
+	}
+	if !strings.Contains(c.Purple("x"), "\033[0;35m") {
+		t.Error("Color.Purple failed")
+	}
+	if !strings.Contains(c.Cyan("x"), "\033[0;36m") {
+		t.Error("Color.Cyan failed")
+	}
+}
 
-	// want1 := "jeffotoni 1golang 2lagn C 3"
-	// want2 := "1010022000"
-	// want3 := "jeffotoni 2021"
+func TestMapColor(t *testing.T) {
+	m := MapCollor()
+	if m["red"] != "\033[0;31m#\033[0m" {
+		t.Errorf("expected red to be \\033[0;31m#\\033[0m, got: %s", m["red"])
+	}
+}
 
-	println(RedCor("Test Func com concat", " vamos ver red", Texts3, " ano: ", 2020))
-	Print.Read("print read", 2021, " vamos ter read new now.", 700)
-	Print.Yellow("print yellow", 2021, " gcolor new ", 10)
-	Print.Blue("print Blue", 2021, " gcolor new ", 10)
-	Print.Purple("print Purple", 2021, " gcolor new ", 10)
-	Print.Black("print Black", 2021, " gcolor new ", 10)
+func TestCollor_MapColor(t *testing.T) {
+	c := Collor{Cor: "green"}
+	got := c.MapColor()
+	if !strings.Contains(got, "\033[0;32m") {
+		t.Errorf("expected green color code, got: %s", got)
+	}
+}
 
-	old = os.Stdout
-	os_r, os_w, _ = os.Pipe()
-	os.Stdout = os_w
+func TestCorGeneric_MapColor(t *testing.T) {
+	c := CorGeneric{Cor: "blue"}
+	got := c.MapColor()
+	if !strings.Contains(got, "\033[0;34m") {
+		t.Errorf("expected blue color code, got: %s", got)
+	}
+}
 
-	Printer.Print(YELLOW_FG, "%s", Texts1)
-	Printer.Print(RED_FG, "%s", Texts2)
-	Printer.Print(GREEN_FG, "%s", Texts3)
+func TestCorGeneric_Cprintln(t *testing.T) {
+	// Test will output to stdout, but we can just call it to ensure no panic
+	Cyan.Cprintln("hello")
+}
 
-	os_w.Close()
-	buf := &bytes.Buffer{}
-	io.Copy(buf, os_r)
-	os_r.Close()
-	// Clean up.
-	os.Stdout = old
-	fmt.Println(buf.String())
+func TestCollor_Cprintln(t *testing.T) {
+	// Test will output to stdout, but we can just call it to ensure no panic
+	c := Collor{Cor: "yellow"}
+	c.Cprintln("world")
 }
